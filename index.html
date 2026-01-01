@@ -3,63 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Life in Weeks</title>
-    <meta name="description" content="Visualize your life as a grid of weeks. Each box represents one week of a 90-year life.">
+    <title>Life Calendar</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="app-container">
-        <header class="header">
-            <h1 class="title">Your Life in Weeks</h1>
-            <div class="input-section">
-                <input type="date" id="birthdate" class="date-input" title="Enter your birth date">
-                <button id="generate-btn" class="generate-btn">Visualize</button>
-            </div>
-        </header>
-
-        <div class="main-content">
-            <!-- Left: Life Grid -->
-            <div class="life-section">
-                <div class="section-header">
-                    <span class="section-title">90-Year Overview</span>
-                    <div id="life-stats" class="inline-stats hidden">
-                        <span><strong id="weeks-lived">0</strong> lived</span>
-                        <span><strong id="percentage">0%</strong> complete</span>
-                        <span>Age <strong id="current-age">0</strong></span>
-                    </div>
-                </div>
-                <div class="grid-wrapper">
-                    <div class="year-labels" id="year-labels"></div>
-                    <div id="life-grid" class="life-grid"></div>
-                </div>
-            </div>
-
-            <!-- Right: Year View -->
-            <div class="year-section">
-                <div class="section-header">
-                    <span class="section-title">This Year (<span id="current-year">2026</span>)</span>
-                    <div id="year-stats" class="inline-stats hidden">
-                        <span><strong id="days-passed">0</strong>/<strong id="total-days">365</strong> days</span>
-                        <span><strong id="year-percentage">0%</strong></span>
-                    </div>
-                </div>
-                <div class="year-grid-wrapper">
-                    <div class="month-labels" id="month-labels"></div>
-                    <div id="year-grid" class="year-grid"></div>
-                </div>
+    <div class="container">
+        <div class="card">
+            <div id="grid" class="grid"></div>
+            <div class="footer">
+                <span id="label-left">2026</span>
+                <span id="label-right">365 days left</span>
             </div>
         </div>
-
-        <div class="legend">
-            <div class="legend-item"><div class="legend-box lived"></div><span>Lived</span></div>
-            <div class="legend-item"><div class="legend-box current"></div><span>Today</span></div>
-            <div class="legend-item"><div class="legend-box future"></div><span>Future</span></div>
+        <div class="controls">
+            <button id="btn-year" class="tab active">Year</button>
+            <button id="btn-life" class="tab">Life</button>
+            <div class="date-input-wrapper">
+                <input type="text" id="birthdate-text" class="date-input" placeholder="YYYY-MM-DD" title="Birth date (YYYY-MM-DD)">
+                <input type="date" id="birthdate-native" class="hidden-picker">
+            </div>
         </div>
     </div>
-
     <script src="app.js"></script>
 </body>
 </html>
