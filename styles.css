@@ -129,6 +129,7 @@ body {
     color: #666;
     cursor: pointer;
     transition: all 0.15s;
+    width: 100px;
 }
 
 .date-input-wrapper {
@@ -149,4 +150,13 @@ body {
     border-color: #666;
     color: #888;
     outline: none;
+}
+
+.date-input::-webkit-calendar-picker-indicator {
+    filter: invert(0.8);
+}
+
+/* Force dark mode for native date picker */
+.hidden-picker {
+    color-scheme: dark;
 }
